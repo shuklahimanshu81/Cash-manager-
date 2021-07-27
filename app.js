@@ -1,3 +1,5 @@
+
+
 var billDiv = document.querySelector("#billDiv");
 var billAmt = document.querySelector("#bill");
 var nextBtn = document.querySelector("#next");
@@ -17,6 +19,7 @@ nextBtn.addEventListener('click', clickHandler)
 
 function clickHandler() {
  
+    errorDiv.style.display = "none";   
 if ( (Number(billAmt.value)) > 0) {
         console.log("Himanshu Shukla")
         nextBtn.style.display = "none";
@@ -30,6 +33,12 @@ if ( (Number(billAmt.value)) > 0) {
 checkBtn.addEventListener('click', clickHandler1)
 
 function clickHandler1() {
+    for(let i=0; i<noteAmt.length ; i++)
+    {
+       noOfNote[i].innerHTML ="";
+    }
+
+    errorDiv.style.display = "none";
     let bill = Number(billAmt.value);
     let rcvd = Number(rcvdAmt.value);
 
@@ -38,9 +47,11 @@ function clickHandler1() {
 
         if ((!Number.isInteger(bill)) && (!Number.isInteger(rcvd))) {
             errorIs("Looks like you entered invalid amount of either bill or cash received by customer.")
+            return;
         }
     if ( bill > rcvd ) {
         errorIs("Bill is more than received amount please ask for more cash from customer.")
+        return;
     }
 
     splitReturn(bill,rcvd);
@@ -56,7 +67,12 @@ else {
 
 function splitReturn(price,amtRcvd){
     let returnAmt = amtRcvd - price;
-
+     if(returnAmt < 1){
+         
+         errorIs("Amount to be returned is zero")
+         returnDiv.style.display = "none";
+         return;
+     }
 
     returnDiv.style.display  = "block";
     for(let i=0; i<noteAmt.length ; i++)
@@ -75,6 +91,7 @@ function amtAfter(remainingAmt,currency,j){
     }
 
     return remainingAmt;
+
 }
 
 function errorIs(text) {
@@ -82,3 +99,4 @@ function errorIs(text) {
     errorDiv.innerText = text;
     returnDiv.style.display = "none";
 }
+
