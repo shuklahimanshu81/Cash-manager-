@@ -66,6 +66,7 @@ th{
     min-width: 250px;
     min-height: 5vh;
     border: solid #6699CC 2px;
+    text-align: center;
 }
 
 #next, #check {
