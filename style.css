@@ -1,9 +1,9 @@
-table ,th ,td {
-    border: solid black 1px;
-    padding: 10px 10px;
-    margin: auto;
-    margin-top: 5px;
+#cashRcvd{
+    display: none;
 }
-#change{
-    margin-top: 10px;
+#return{
+    display: none;
+}
+#errorDiv{
+    display: none;
 }

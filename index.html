@@ -10,29 +10,31 @@
 </head>
 
 <body>
-    <div>
+    <div id="billDiv">
         <h3> Enter the bill amount</h3>
-        <input type="number" id="bill">
-        <button id="nxtBtn">Next</button>
+        <input type="number" id="bill" placeholder="Enter numbers only">
+        <button id="next">Next</button>
     </div>
-    <div>
-        <h3>Enter the cash received by customer </h3> <input type="number" id="rcvdCash"> <button id="checkBtn"> Check
-        </button>
+    <div id="cashRcvd">
+        <h3>Enter the cash received by customer </h3> 
+        <input type="number" id="cash" placeholder="Enter numbers only">
+         <button id="check"> Check</button>
     </div>
-    <div id="change">
+    <div id="errorDiv"></div>
+    <div id="return">
         <table>
             <tr>
                 <th> No. of Notes </th>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
-                <td class="currency"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
+                <td id="noOfNotes"></td>
             </tr>
             <tr>
                 <th> Notes </th>
@@ -49,6 +51,7 @@
             </tr>
         </table>
     </div>
+    
    
 <script src="/app.js"></script>
 </body>
