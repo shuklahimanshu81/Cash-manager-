@@ -30,6 +30,7 @@ header{
     width: 580px;
     margin-bottom: 1rem;
     margin-top: 0rem;
+    border-radius: 30px ;
 }
 .repo{
     text-align: right;
